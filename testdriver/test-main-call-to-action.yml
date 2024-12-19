@@ -1,0 +1,18 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the "Get started" button.
+    commands:
+      - command: hover-text
+        text: Get started
+        description: button to begin the process
+        action: click
+  - prompt: >-
+      Assert that it navigates to the correct page or section.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the page URL is app.hiive.com/signup
