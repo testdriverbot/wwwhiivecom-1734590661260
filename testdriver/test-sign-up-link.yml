@@ -1,0 +1,20 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the "Sign Up" button.
+    commands:
+      - command: hover-text
+        text: Sign Up
+        description: registration button in the top right of the header
+        action: click
+  - prompt: >-
+      Assert that the sign-up page is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: >-
+          the sign-up page is displayed with fields for first name, last name,
+          telephone, email, and password
